@@ -4,17 +4,17 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Noto Sans CJK SC","Noto Sans SC","Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","Source Han Sans SC","WenQuanYi Micro Hei","Arial Unicode MS",Arial,sans-serif;font-size:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Noto Sans CJK SC","Noto Sans SC","Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","Source Han Sans SC","WenQuanYi Micro Hei","Arial Unicode MS",Arial,sans-serif;font-size:24px}
 .subtitle{color:var(--muted);margin-top:4px}
 .site-footer{padding:20px;color:var(--muted);text-align:center}
 
 /* Books grid */
-.books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:18px;padding:0 20px 30px}
-.book-card{position:relative;display:block;height:200px;text-decoration:none;color:inherit;perspective:800px}
+.books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:28px;padding:10px 24px 40px;max-width:1200px;margin:0 auto}
+\.book-card{position:relative;display:block;height:160px;text-decoration:none;color:inherit;perspective:800px}
 .book-card .book-spine{position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(90deg,#c7d2fe,#93c5fd)}
-.book-card .book-cover{position:absolute;left:12px;right:0;top:0;bottom:0;background:var(--card);border:1px solid #e5e7eb;border-left:0;border-radius:4px 6px 6px 4px;display:flex;align-items:center;justify-content:center;padding:10px;transition:transform .15s ease,box-shadow .15s ease}
+.book-card .book-cover{position:absolute;left:12px;right:0;top:0;bottom:0;background:var(--card);border:1px solid #e5e7eb;border-left:0;border-radius:4px 6px 6px 4px;display:flex;align-items:center;justify-content:center;padding:8px;transition:transform .15s ease,box-shadow .15s ease}
 .book-card:hover .book-cover{transform:translateZ(10px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
-.book-title{display:block;text-align:center;font-weight:600}
+.book-title{display:block;text-align:center;font-weight:600;font-size:13px;line-height:1.2}
 .book-card.completed .book-spine{background:var(--danger)}
 .book-card.completed .book-cover{border-color:var(--danger)}
 
@@ -45,5 +45,6 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-app
 }
 
 .overlay-content .drag-handle{cursor:move}
+
 
 
