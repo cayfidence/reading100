@@ -4,9 +4,7 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-.site-header{padding:16px 20px}
-.site-header h1{margin:0;font-size:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Noto Sans CJK SC","Noto Sans SC","Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","Source Han Sans SC","WenQuanYi Micro Hei","Arial Unicode MS",Arial,sans-serif;font-size:24px}
 .subtitle{color:var(--muted);margin-top:4px}
 .site-footer{padding:20px;color:var(--muted);text-align:center}
 
@@ -47,4 +45,5 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-app
 }
 
 .overlay-content .drag-handle{cursor:move}
+
 
