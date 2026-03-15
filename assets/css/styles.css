@@ -33,7 +33,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-app
 /* Transparent overlay */
 .overlay{pointer-events:none;position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);backdrop-filter:saturate(120%) blur(2px);}
 .overlay.hidden{display:none}
-.overlay-content{pointer-events:auto;width:min(800px,92vw);max-height:min(80vh,900px);overflow:auto;border:1px solid rgba(255,255,255,.4);border-radius:10px;padding:16px 16px 8px;background:rgba(255,255,255,.6)}
+.overlay-content{pointer-events:auto;position:fixed;left:50%;top:12vh;transform:translateX(-50%);width:min(800px,92vw);max-height:min(80vh,900px);overflow:auto;border:1px solid rgba(255,255,255,.4);border-radius:10px;padding:16px 16px 8px;background:rgba(255,255,255,.6)}
 .overlay-hint{margin-top:-6px;color:var(--muted)}
 .qa{margin:10px 0}
 .qa label{display:block;font-weight:600;margin-bottom:4px}
@@ -45,3 +45,6 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-app
   .book-card{height:170px}
   .reader-main{height:calc(100vh - 200px)}
 }
+
+.overlay-content .drag-handle{cursor:move}
+
