@@ -1,5 +1,5 @@
-﻿<!doctype html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,22 +9,17 @@
 <body>
   <header class="site-header">
     <h1>Reading 100 Library</h1>
-    <p class="subtitle">点击一本书开始阅读。完成后会变红。</p>
+    <p class="subtitle">Click a book to start reading. Finished books turn red.</p>
   </header>
+  <section class="toolbar">
+    <input id="search" class="search" type="search" placeholder="Search books..." aria-label="Search books" />
+    <span id="count" class="count" aria-live="polite"></span>
+  </section>
 
   <main id="books" class="books-grid" aria-live="polite"></main>
 
-  <template id="book-card-tpl">
-    <a class="book-card" href="#">
-      <div class="book-spine"></div>
-      <div class="book-cover">
-        <span class="book-title"></span>
-      </div>
-    </a>
-  </template>
-
   <footer class="site-footer">
-    <small>本网站为静态站点，可在 GitHub Pages 上运行。</small>
+    <small>This is a static site and can run on GitHub Pages.</small>
   </footer>
 
   <script src="library/library.js"></script>
