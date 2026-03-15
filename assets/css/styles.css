@@ -1,4 +1,4 @@
-﻿/* Base layout */
+/* Base layout */
 :root{
   --bg:#f7f7fb; --ink:#222; --muted:#666; --accent:#3b82f6; --success:#16a34a; --card:#fff; --danger:#ef4444;
 }
@@ -31,9 +31,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-app
 .btn.success{background:var(--success);border-color:var(--success);color:#fff}
 
 /* Transparent overlay */
-.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);backdrop-filter:saturate(120%) blur(2px);}
+.overlay{pointer-events:none;position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);backdrop-filter:saturate(120%) blur(2px);}
 .overlay.hidden{display:none}
-.overlay-content{width:min(800px,92vw);max-height:min(80vh,900px);overflow:auto;border:1px solid rgba(255,255,255,.4);border-radius:10px;padding:16px 16px 8px;background:rgba(255,255,255,.6)}
+.overlay-content{pointer-events:auto;width:min(800px,92vw);max-height:min(80vh,900px);overflow:auto;border:1px solid rgba(255,255,255,.4);border-radius:10px;padding:16px 16px 8px;background:rgba(255,255,255,.6)}
 .overlay-hint{margin-top:-6px;color:var(--muted)}
 .qa{margin:10px 0}
 .qa label{display:block;font-weight:600;margin-bottom:4px}
