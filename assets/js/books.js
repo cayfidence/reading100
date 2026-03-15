@@ -4,7 +4,7 @@
     try {
       const res = await fetch('library/library.json', { cache: 'no-store' });
       if(!res.ok) throw new Error('status '+res.status);
-      const items = await res.json();
+      let items = await res.json();
       if (Array.isArray(items) && items.length) {
         return items.map(it => ({
           slug: it.slug || it.name?.replace(/\.[Pp][Dd][Ff]$/,'') || it.replace(/\.[Pp][Dd][Ff]$/,''),
@@ -30,3 +30,18 @@
 
   window.Books = { loadBooks, slugify };
 })();
+    // Sort by day number if present: ensure day100/day101 appear after day99
+    (function(){
+      const arr = Array.isArray(items) ? items : [];
+      const withNum = arr.map(it => {
+        const t = it.title || it.name || it;
+        const m = /^day\s*(\d+)/i.exec(t);
+        const num = m ? parseInt(m[1],10) : null;
+        return { it, num };
+      });
+      withNum.sort((a,b)=>{
+        if (a.num!=null && b.num!=null) return a.num-b.num;
+        if (a.num!=null) return -1; if (b.num!=null) return 1; return 0;
+      });
+      items = withNum.map(x=>x.it);
+    })();
