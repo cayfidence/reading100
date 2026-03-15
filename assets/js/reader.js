@@ -1,4 +1,4 @@
-﻿// reader.js - load the selected book, handle answers overlay
+// reader.js - load the selected book, handle answers overlay
 (function(){
   const params = new URLSearchParams(location.search);
   const slug = params.get('book');
@@ -10,7 +10,7 @@
   const form = document.getElementById('answerForm');
 
   if(!slug){
-    titleEl.textContent = '未指定书籍';
+    titleEl.textContent = 'No book selected';
     finishBtn.disabled = true;
     return;
   }
@@ -19,7 +19,7 @@
   Books.loadBooks().then(list => {
     const book = list.find(b => b.slug === slug);
     if(!book){
-      titleEl.textContent = '未找到指定书籍';
+      titleEl.textContent = 'Book not found';
       finishBtn.disabled = true;
       return;
     }
@@ -35,7 +35,7 @@
       }
     }
   }).catch(() => {
-    titleEl.textContent = '加载书单失败';
+    titleEl.textContent = 'Failed to load library';
   });
 
   function openOverlay(){ overlay.classList.remove('hidden'); overlay.setAttribute('aria-hidden','false'); }
@@ -50,7 +50,7 @@
     ReadingStore.saveAnswers(slug, data);
     closeOverlay();
     // Visual confirmation
-    finishBtn.textContent = '已完成 ✅';
+    finishBtn.textContent = 'Completed ?';
     // Optional: navigate back after short delay
     setTimeout(()=>{
       if(document.referrer && new URL(document.referrer).pathname.endsWith('/reader.html')){
@@ -101,3 +101,4 @@
     handle.addEventListener('touchmove', (e)=>{ if(!dragging) return; const t=e.touches[0]; onMove({clientX:t.clientX, clientY:t.clientY}); e.preventDefault(); }, {passive:false});
     handle.addEventListener('touchend', end);
   })();
+
