@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reader - Reading 100</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="reader-page">
+  <header class="site-header">
+    <a class="back-link" href="./">← 返回图书馆</a>
+    <h1 id="readerTitle">阅读中…</h1>
+  </header>
+
+  <main class="reader-main">
+    <iframe id="pdfFrame" title="PDF Reader" class="pdf-frame"></iframe>
+  </main>
+
+  <div class="reader-actions">
+    <button id="finishBtn" class="btn primary">Finish</button>
+  </div>
+
+  <!-- Transparent overlay form -->
+  <div id="answerOverlay" class="overlay hidden" aria-hidden="true" role="dialog" aria-labelledby="overlayTitle">
+    <div class="overlay-content">
+      <h2 id="overlayTitle">写下你的答案</h2>
+      <p class="overlay-hint">提示：窗口是半透明的，方便对照原文。</p>
+      <form id="answerForm">
+        <div class="qa">
+          <label for="q_who">who</label>
+          <textarea id="q_who" name="who" rows="2" required></textarea>
+        </div>
+        <div class="qa">
+          <label for="q_wanted">wanted</label>
+          <textarea id="q_wanted" name="wanted" rows="2" required></textarea>
+        </div>
+        <div class="qa">
+          <label for="q_but">but</label>
+          <textarea id="q_but" name="but" rows="2" required></textarea>
+        </div>
+        <div class="qa">
+          <label for="q_so">so</label>
+          <textarea id="q_so" name="so" rows="2" required></textarea>
+        </div>
+        <div class="qa">
+          <label for="q_then">then</label>
+          <textarea id="q_then" name="then" rows="2" required></textarea>
+        </div>
+        <div class="overlay-buttons">
+          <button type="button" class="btn" id="cancelOverlay">Cancel</button>
+          <button type="submit" class="btn success">Complete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="library/library.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/books.js"></script>
+  <script src="assets/js/reader.js"></script>
+</body>
+</html>
